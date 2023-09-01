@@ -1,0 +1,292 @@
+<!-- Pixel Facebook Inicio -->
+<!-- End Meta Pixel Code -->
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/material-design-iconic-font/2.2.0/css/material-design-iconic-font.min.css">
+
+<style>
+  .hide {
+    display: none!important;
+  }
+  typebot-standard {
+    position: relative;
+    z-index: 9999;
+  }
+  #__next {
+    position: relative;
+    z-index: 9999;
+}
+  /* User Bar */
+.user-bar {
+  width: 100%;
+  height: 55px;
+  background: #005e54;
+  color: #fff;
+  padding: 0;
+  font-size: 24px;
+  position: fixed;
+  z-index: 99999;
+  display: block;
+  top: 0;
+}
+
+.user-bar:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.user-bar div {
+    float: left;
+    transform: translateY(-50%);
+    position: relative;
+    top: 50%;
+    margin-left: 10px;
+}
+
+.user-bar .actions {
+  float: right;
+  margin: 0 0 0 20px;
+}
+
+.user-bar .actions.more {
+  margin: 0 12px 0 32px;
+}
+
+.user-bar .actions.attachment {
+  margin: 0 0 0 30px;
+}
+
+.user-bar .actions.attachment i {
+  display: block;
+  transform: rotate(-45deg);
+}
+
+.user-bar .avatar {
+  margin: 0 0 0 5px;
+  width: 36px;
+  height: 36px;
+}
+
+.user-bar .avatar img {
+  border-radius: 50%;
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.1);
+  display: block;
+  width: 100%;
+}
+
+.user-bar .name {
+  font-size: 17px;
+  font-weight: 600;
+  text-overflow: ellipsis;
+  letter-spacing: 0.3px;
+  margin: 0 0 0 8px;
+  overflow: hidden;
+  white-space: nowrap;
+  width: 150px;
+}
+
+.user-bar .status {
+  display: block;
+  font-size: 13px;
+  font-weight: 400;
+  letter-spacing: 0;
+}
+
+
+  /* Botão do input */
+.typebot-input .typebot-button {
+  content: "";
+  background: rgba(0, 138, 134, 1);
+  border-radius: 50%; 
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px; 
+  height: 50px; 
+  border: none;
+  font-size: 0px;
+  color: transparent;
+}
+
+.typebot-input .typebot-button::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 25px;
+  height: 25px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: url('data:image/svg+xml;charset=utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="19px"><path d="M476.59 227.05l-.16-.07L49.35 49.84A23.56 23.56 0 0027.14 52 24.65 24.65 0 0016 72.59v113.29a24 24 0 0019.52 23.57l232.93 43.07a4 4 0 010 7.86L35.53 303.45A24 24 0 0016 327v113.31A23.57 23.57 0 0026.59 460a23.94 23.94 0 0013.22 4 24.55 24.55 0 009.52-1.93L476.4 285.94l.19-.09a32 32 0 000-58.8z" fill="white"/></svg>');
+}
+
+/* Oculta o ícone anterior*/
+.typebot-input .typebot-button .send-icon {
+  display: none; 
+}
+
+/* Estilo da caixa do input */
+.typebot-input {
+    max-width: 100%!important;
+    width:100%!important;
+    position: fixed;
+    bottom: 0;
+    align-items: center;
+    z-index: 999;
+    right: 0;
+    margin-bottom: 20px;
+    background-color: white;
+    border-radius: 50px;
+    box-shadow: 1 2px 1px -1px rgba(0,0,0,.2);
+    height: 50px;
+    padding-right: 0px!important;
+}
+
+
+/* Corrigir cor do botão */
+.disabled\:opacity-50:disabled {
+    opacity: 100%;
+}
+
+</style>
+
+<script>
+function criarBarra() {
+  var userBar = document.createElement("div");
+  userBar.className = "user-bar";
+
+  var backButton = document.createElement("div");
+  backButton.className = "back";
+  backButton.innerHTML = '<i class="zmdi zmdi-arrow-left"></i>';
+
+  var avatar = document.createElement("div");
+  avatar.className = "avatar";
+  avatar.innerHTML = '<img src="https://i.imgur.com/aWRK0sc.png" alt="Nome do Avatar">';
+
+  var name = document.createElement("div");
+  name.className = "name";
+  name.innerHTML = '<span>Nome do Avatar</span> <span data-testid="psa-verified" data-icon="psa-verified" class=""><svg viewBox="0 0 18 18" height="18" width="18" preserveAspectRatio="xMidYMid meet" class="" version="1.1" x="0px" y="0px" enable-background="new 0 0 18 18" xml:space="preserve"><polygon id="Star-2" fill="#00DA60" points="9,16 7.1,16.9 5.8,15.2 3.7,15.1 3.4,13 1.5,12 2.2,9.9 1.1,8.2 2.6,6.7 2.4,4.6 4.5,4 5.3,2 7.4,2.4 9,1.1 10.7,2.4 12.7,2 13.6,4 15.6,4.6 15.5,6.7 17,8.2 15.9,9.9 16.5,12 14.7,13 14.3,15.1 12.2,15.2 10.9,16.9 "></polygon><polygon id="Check-Icon" fill="#FFFFFF" points="13.1,7.3 12.2,6.5 8.1,10.6 5.9,8.5 5,9.4 8,12.4 "></polygon></svg></span><span class="status">online</span>';
+
+  var moreActions = document.createElement("div");
+  moreActions.className = "actions more";
+  moreActions.innerHTML = '<i class="zmdi zmdi-more-vert"></i>';
+
+  var attachmentAction = document.createElement("div");
+  attachmentAction.className = "actions attachment";
+  attachmentAction.innerHTML = '<i class="zmdi zmdi-attachment-alt"></i>';
+
+  var phoneAction = document.createElement("div");
+  phoneAction.className = "actions";
+  phoneAction.innerHTML = '<i class="zmdi zmdi-phone"></i>';
+
+  userBar.appendChild(backButton);
+  userBar.appendChild(avatar);
+  userBar.appendChild(name);
+  userBar.appendChild(moreActions);
+  userBar.appendChild(attachmentAction);
+  userBar.appendChild(phoneAction);
+
+  var elementoPai = document.querySelector("#__next");
+  if (elementoPai) {
+    elementoPai.insertBefore(userBar, elementoPai.firstChild);
+  }
+}
+
+criarBarra();
+</script>
+
+<script>
+  
+  const botBody = document.querySelector('typebot-standard')
+        .shadowRoot.querySelector('.typebot-container');
+  const userAvatar = botBody.querySelector('img[elementtiming="Bot avatar"]');
+  const status = document.querySelector('.status');
+  
+  setInterval(() => {
+      const isTyping = botBody.querySelector('.bubble1');
+      const sibling = isTyping?.parentElement?.parentElement?.nextSibling;
+
+      if(isTyping && sibling.src) {
+        status.innerText = 'gravando audio...'
+      } else if(isTyping) {      
+        status.innerText = 'digitando...'
+      } else {
+        status.innerText = 'online'
+      }
+    }, 400)
+</script>
+
+  <script>
+try {
+  
+  
+  const botBody = document.querySelector('typebot-standard')
+        .shadowRoot.querySelector('.typebot-container');
+  const userAvatar = botBody.querySelector('img[elementtiming="Bot avatar"]');
+  const status = document.querySelector('.status');
+  
+  const audioNot = document.createElement('audio');
+  audioNot.src = 'https://s3.fr-par.scw.cloud/typebot/public/typebots/cllzxzfvj002hl30fzk2pum54/blocks/dr8746xtijdct8qk1wi5siaa?v=1693533308928';
+  let mensagesLength = 0;
+
+  createInfoMessage();
+
+  function createInfoMessage() {
+    const message= "Esta é uma conta comercial e não recebe ligações";
+    const div = document.createElement('div');
+    const infoHTML = `<div style="display: flex; align-items: center; gap: 4px; background-color: #d5f4f0; border-radius: 10px; padding: 10px; width: fit-content; max-width: 450px; margin: 2rem auto .5rem;" class="info-container">
+      <div>
+        <svg width="24px" height="24px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path fill="#4b5e63" fill-rule="evenodd" clip-rule="evenodd" d="M22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12ZM12 17.75C12.4142 17.75 12.75 17.4142 12.75 17V11C12.75 10.5858 12.4142 10.25 12 10.25C11.5858 10.25 11.25 10.5858 11.25 11V17C11.25 17.4142 11.5858 17.75 12 17.75ZM12 7C12.5523 7 13 7.44772 13 8C13 8.55228 12.5523 9 12 9C11.4477 9 11 8.55228 11 8C11 7.44772 11.4477 7 12 7Z"></path>
+        </svg>
+      </div>
+      <p style="color: #53676b;">${message}</p>
+    </div>`;
+
+    div.innerHTML = infoHTML;
+    const messagesContainer = botBody.querySelector('.typebot-chat-view');
+    messagesContainer.insertBefore(div, messagesContainer.firstChild);
+  }
+  
+  setInterval(() => {
+      const isTyping = botBody.querySelector('.bubble1');
+      const sibling = isTyping?.parentElement?.parentElement?.nextSibling;
+
+      if(isTyping && sibling.src) {
+        status.innerText = 'gravando audio...'
+      } else if(isTyping) {      
+        status.innerText = 'digitando...'
+      } else {
+        status.innerText = 'online'
+      }
+
+      const allMessages = botBody.querySelector('.typebot-chat-view').querySelectorAll('.items-start.typebot-host-bubble');    
+      
+      if(allMessages.length > mensagesLength) {        
+        if(!isTyping) {
+          for (let i = mensagesLength; i < allMessages.length; i++) {
+            const iconContainer = document.createElement('div');
+            const checkIcon = `<svg id="checkIcon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 38.626 24.684" style="position: absolute;bottom: 0;right: 5px;" height="20" width="18">
+              <g id="Grupo_1" data-name="Grupo 1" transform="translate(-708.9 -601.383)">
+                <path id="Caminho_6" data-name="Caminho 6" d="M728.035,623.468l1.382,1.482,17.929-20.334" transform="translate(-1.937 -1.117)" fill="none" stroke="#07c654" stroke-linecap="round" stroke-width="3"></path>
+                <path id="Caminho_7" data-name="Caminho 7" d="M712.017,616.07l7.088,8.039,17.757-20.14" transform="translate(-1 -0.469)" fill="none" stroke="#07c654" stroke-linecap="round" stroke-width="3"></path>
+              </g>
+            </svg>`;
+            iconContainer.innerHTML = checkIcon;
+            
+            const currentMsg = allMessages[i];
+            currentMsg.append(iconContainer);
+          }
+          
+          mensagesLength = allMessages.length;
+          audioNot.play();        
+        }
+      }
+    
+    }, 400)
+
+} catch (e) {
+  console.warn(e); 
+}
+</script>
